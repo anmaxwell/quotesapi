@@ -1,8 +1,11 @@
 # quotesapi
 
-Project to create an API containing inspirational quotes to then create 2 applications to link
+This is part 2 of a 3 part project to get experience and exposure of using APIs, classification and text generation. 
 
-Link1 to pull down a quote and generate a picture based on the text
-Link2 to autogenerate quotes and push good ones back to the api
+Part 1 is the Quotemaker.  This uses pre trained GPT2 to auto generate motivational quotes after being fine tuned on existing quotes.  If the generated quote is voted good by the reader, it is pushed to the API and added to the training list.  If not it's simply ignored.
 
-Also using streamlit as a way to connect
+Part 2 is the API.  The API holds all the quotes and can be updated by adding more quotes from the Quotemaker.  Also using streamlit as a way to connect
+
+Part 3 is the Imagemaker.  This pulls down a quote and predicts an image from a set using a trained KNN model.  If the image 
+
+of a project building ML skills and using APIs.and this project pulls down a quote from the API and predicts an image to represent the quote.  If the reader agrees the image matches the quote, this is added to the training list for future training.
