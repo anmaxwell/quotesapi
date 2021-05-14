@@ -1,6 +1,6 @@
 from quoteapi import app, db
 from quoteapi.models import Quote
-from flask import jsonify, request
+from flask import jsonify, request, redirect, url_for
 from random import randrange
 
 #test quotes
@@ -22,7 +22,11 @@ def quote():
 @app.route("/api/addquote", methods=['GET', 'POST'])
 def add_quote():
 
-    newquote = request.json['quote']
-    #newquote = Quote(quote=request.json['quote'])
-    #db.session.add(newquote)
-    #db.session.commit()
+    #newquote = request.json
+    #newquote['quote']
+
+    newquote = Quote(quote=request.json['quote'])
+    db.session.add(newquote)
+    db.session.commit()
+
+    return redirect(url_for('home'))
