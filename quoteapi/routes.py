@@ -19,9 +19,10 @@ def quote():
     #return str(text.quote)
     return jsonify(index=quote_no,quote=str(text.quote))
 
-@app.route("/api/addquote")
+@app.route("/api/addquote", methods=['GET', 'POST'])
 def add_quote():
 
-    newquote = Quote(quote=request.json['quote'])
-    db.session.add(newquote)
-    db.session.commit()
+    newquote = request.json['quote']
+    #newquote = Quote(quote=request.json['quote'])
+    #db.session.add(newquote)
+    #db.session.commit()
